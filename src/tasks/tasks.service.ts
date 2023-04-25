@@ -13,4 +13,12 @@ export class TasksService {
   findAll() {
     return this.tasks.repository.find();
   }
+
+  findByNameAndStatus(nome: string, status: boolean) {
+    return this.tasks.repository.findByNameAndStatus(nome, status);
+  }
+
+  findByStatus(status: boolean) {
+    return this.tasks.repository.findByStatus(status);
+  }
 }

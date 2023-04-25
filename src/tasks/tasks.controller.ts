@@ -22,4 +22,17 @@ export class TasksController {
   findAll() {
     return this.tasksService.findAll();
   }
+
+  @Get('find/:nome/:status')
+  findByNameAndStatus(
+    @Param('nome') nome: string,
+    @Param('status') status: boolean,
+  ) {
+    return this.tasksService.findByNameAndStatus(nome, status);
+  }
+
+  @Get('status/:status')
+  findByStatus(@Param('status') status: boolean) {
+    return this.tasksService.findByStatus(status);
+  }
 }
